@@ -1,37 +1,37 @@
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Sun from "./icons/sun";
 import Moon from "./icons/moon";
 
-type HeaderProps = {
-  setDarkMode: Function;
-  darkMode: boolean;
-};
-
-const Header = ({ setDarkMode, darkMode }: HeaderProps) => {
+const Header = () => {
+  const [darkMode, setDarkMode] = useState(true);
+  useEffect(() => {
+    document.querySelector("html")!.classList.toggle("dark");
+  }, [darkMode]);
   return (
-    <header className="bg-gray-100 dark:bg-gray-800 sticky top-0">
+    <header className="sticky top-0 bg-white dark:bg-gray-800">
       <nav
         className={
-          "font-bold max-w-prose py-2 px-2 flex" +
-          " justify-between items-end mx-auto"
+          "flex justify-between font-bold mx-auto max-w-prose p-2" +
+          " items-end space-x-3"
         }>
         <Link href="/">
-          <a>
-            <h1 className="text-2xl">Toni Jarjour</h1>
-          </a>
+          <a className="text-2xl">Toni Jarjour</a>
         </Link>
-        <div className="flex-inline space-x-3">
+        <span className="space-x-3">
           <Link href="/about">
             <a>About</a>
           </Link>
           <button
-            className="text-indigo-500 dark:text-yellow-300"
-            onClick={() => setDarkMode(!darkMode)}>
+            className="text-indigo-500 dark:text-yellow-300 align-text-bottom"
+            aria-label="dark light mode switch"
+            onClick={() => setDarkMode((prevDarkMode) => !prevDarkMode)}>
             {darkMode ? <Sun /> : <Moon />}
           </button>
-        </div>
+        </span>
       </nav>
     </header>
   );
 };
+
 export default Header;

@@ -4,40 +4,57 @@ import { SidebarContext } from "./layout";
 
 const History = () => {
   return (
-    <nav className="p-2">
+    <nav className="px-3">
       <ul>
         <Year year="2022">
           <Month month="December">
-            <Item path="/about" title="Article #3" color=" dark:border-green-600 border-green-400" />
-            <Item path="/about" title="Article #2" color=" dark:border-purple-600 border-purple-400" />
-            <Item path="/about" title="Article #1" color=" dark:border-green-600 border-green-400" />
+            <Item path="/about" title="Article #3" />
+            <Item path="/about" title="Article #2" />
+            <Item path="/about" title="Article #1" />
           </Month>
           <Month month="November">
-            <Item path="/about" title="Article #3" color=" dark:border-purple-600 border-purple-400" />
-            <Item path="/about" title="Article #2" color=" dark:border-green-600 border-green-400" />
-            <Item path="/about" title="Article #1" color=" dark:border-purple-600 border-purple-400" />
+            <Item path="/about" title="Article #3" />
+            <Item path="/about" title="Article #2" />
+            <Item path="/about" title="Article #1" />
           </Month>
           <Month month="September">
-            <Item path="/about" title="Article #3" color=" dark:border-green-600 border-green-400" />
-            <Item path="/about" title="Article #2" color=" dark:border-purple-600 border-purple-400" />
-            <Item path="/about" title="Article #1" color=" dark:border-green-600 border-green-400" />
+            <Item path="/about" title="Article #3" />
+            <Item path="/about" title="Article #2" />
+            <Item path="/about" title="Article #1" />
           </Month>
         </Year>
         <Year year="2021">
           <Month month="December">
-            <Item path="/about" title="Article #3" color=" dark:border-purple-600 border-purple-400" />
-            <Item path="/about" title="Article #2" color=" dark:border-green-600 border-green-400" />
-            <Item path="/about" title="Article #1" color=" dark:border-purple-600 border-purple-400" />
+            <Item path="/about" title="Article #3" />
+            <Item path="/about" title="Article #2" />
+            <Item path="/about" title="Article #1" />
           </Month>
           <Month month="November">
-            <Item path="/about" title="Article #3" color=" dark:border-green-600 border-green-400" />
-            <Item path="/about" title="Article #2" color=" dark:border-purple-600 border-purple-400" />
-            <Item path="/about" title="Article #1" color=" dark:border-green-600 border-green-400" />
+            <Item path="/about" title="Article #3" />
+            <Item path="/about" title="Article #2" />
+            <Item path="/about" title="Article #1" />
           </Month>
           <Month month="September">
-            <Item path="/about" title="Article #3" color=" dark:border-purple-600 border-purple-400" />
-            <Item path="/about" title="Article #2" color=" dark:border-green-600 border-green-400" />
-            <Item path="/about" title="Article #1" color=" dark:border-purple-600 border-purple-400" />
+            <Item path="/about" title="Article #3" />
+            <Item path="/about" title="Article #2" />
+            <Item path="/about" title="Article #1" />
+          </Month>
+        </Year>
+        <Year year="2021">
+          <Month month="December">
+            <Item path="/about" title="Article #3" />
+            <Item path="/about" title="Article #2" />
+            <Item path="/about" title="Article #1" />
+          </Month>
+          <Month month="November">
+            <Item path="/about" title="Article #3" />
+            <Item path="/about" title="Article #2" />
+            <Item path="/about" title="Article #1" />
+          </Month>
+          <Month month="September">
+            <Item path="/about" title="Article #3" />
+            <Item path="/about" title="Article #2" />
+            <Item path="/about" title="Article #1" />
           </Month>
         </Year>
       </ul>
@@ -53,10 +70,10 @@ type YearProps = {
 const Year = ({ children, year }: YearProps) => {
   const [expand, setExpand] = useState(true);
   return (
-    <li className="rounded-sm my-4 px-2 py-1 bg-gray-200 dark:bg-gray-900">
+    <li className="my-4">
       <button
         onClick={() => setExpand((prevExpand) => !prevExpand)}
-        className="w-full text-left font-bold">
+        className="font-bold">
         {year}
       </button>
       <ul className="ml-1">{expand && children}</ul>
@@ -72,36 +89,36 @@ type MonthProps = {
 const Month = ({ children, month }: MonthProps) => {
   const [expand, setExpand] = useState(true);
   return (
-    <li className="rounded-sm my-2 px-2 py-1 bg-gray-100 dark:bg-gray-800">
+    <li className="my-2">
       <button
         onClick={() => setExpand((prevExpand) => !prevExpand)}
-        className="w-full text-left italic">
+        className="italic">
         {month}
       </button>
       <ul className="ml-2">{expand && children}</ul>
     </li>
   );
 };
+
 type ItemProps = {
   path: string;
   title: string;
-  color: string;
+  color?: string;
 };
 
-const Item = ({ path, title, color }: ItemProps) => {
+const Item = ({
+  path,
+  title,
+  color = " border-blue-300 dark:border-indigo-500",
+}: ItemProps) => {
   const { setShowSidebar } = useContext(SidebarContext);
   return (
-    <li>
+    <li className="my-1.5">
       <Link href={path}>
-        <a>
-          <div
-            onClick={() => setShowSidebar(false)}
-            className={
-              "rounded drop-shadow border-l-4 bg-gray-100 dark:bg-gray-800 px-1.5 py-px my-1" +
-              color
-            }>
-            {title}
-          </div>
+        <a
+          className={"border-l-4 pl-1.5" + color}
+          onClick={() => setShowSidebar(false)}>
+          {title}
         </a>
       </Link>
     </li>
@@ -109,20 +126,23 @@ const Item = ({ path, title, color }: ItemProps) => {
 };
 
 type SidebarProps = {
-  show: boolean;
+  showSidebar: boolean;
 };
 
-const Sidebar = ({ show }: SidebarProps) => {
+const Sidebar = ({ showSidebar }: SidebarProps) => {
   return (
     <aside
       className={
-        "lg:w-80 lg:ml-auto lg:flex-none lg:block lg:sticky" +
-        " bg-gray-100 dark:bg-gray-800 z-10 inset-0 h-screen fixed" +
-        " max-w-xs w-5/6 overflow-y-scroll" +
-        (show ? "" : " hidden")
+        "lg:ml-auto lg:sticky lg:block fixed inset-0" +
+        " z-10 bg-white dark:bg-gray-800 w-5/6 max-w-xs" +
+        " overflow-y-auto h-screen" +
+        (showSidebar ? "" : " hidden")
       }>
-      <History />
+      <div className="lg:h-5/6 lg:overflow-y-scroll lg:mt-12">
+        <History />
+      </div>
     </aside>
   );
 };
+
 export default Sidebar;
