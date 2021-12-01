@@ -109,14 +109,14 @@ type ItemProps = {
 const Item = ({
   path,
   title,
-  color = " border-blue-300 dark:border-indigo-500",
+  color = " border-blue-400 dark:border-indigo-500",
 }: ItemProps) => {
   const { setShowSidebar } = useContext(SidebarContext);
   return (
     <li className="my-1.5">
       <Link href={path}>
         <a
-          className={"border-l-4 pl-1.5" + color}
+          className={"border-l-4 px-1.5" + color}
           onClick={() => setShowSidebar(false)}>
           {title}
         </a>
