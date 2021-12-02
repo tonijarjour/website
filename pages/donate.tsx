@@ -28,7 +28,11 @@ const Donate = () => {
           height={20}
           width={20}
         />
-        <code className="px-1.5 py-0.5 bg-gray-100 dark:bg-gray-900 text-base">
+        <code
+          className={
+            "px-1.5 py-0.5 bg-gray-100 dark:bg-gray-900 text-sm" +
+            " inline-block w-24 overflow-x-scroll"
+          }>
           39LqytCzXVyzzceGYZ1goChg2hZTxaMoqr
         </code>
       </div>
@@ -40,7 +44,11 @@ const Donate = () => {
           height={20}
           width={20}
         />
-        <code className="px-1.5 py-0.5 bg-gray-100 dark:bg-gray-900 text-base">
+        <code
+          className={
+            "px-1.5 py-0.5 bg-gray-100 dark:bg-gray-900 text-sm" +
+            " inline-block w-24 overflow-x-scroll"
+          }>
           0xDA15F08Af71c3A4aa9b8DAb8d522a70264B8c56b
         </code>
       </div>
