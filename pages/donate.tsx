@@ -9,15 +9,15 @@ const Donate = () => {
         <meta
           name="description"
           content={
-            "If you the enjoy this blog, consider sending some money." +
-            " Any amount is appreciated and it helps me lot."
+            "If you enjoy this blog, consider sending some money." +
+            " Any amount is appreciated and it helps me a lot."
           }
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <p>
-        If you the enjoy this blog, consider sending some money. Any amount is
-        appreciated and it helps me lot.
+        If you enjoy this blog, consider sending some money. Any amount is
+        appreciated and it helps me a lot.
       </p>
       <br />
       <div className="space-x-3 text-center">

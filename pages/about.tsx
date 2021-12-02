@@ -30,8 +30,8 @@ const About = () => {
       <br />
       <h2 className="font-bold">Education</h2>
       <p>
-        I recieved a high school diploma in 2016. In the following two years, I
-        went to community college and recieved an associate&apos;s degree for
+        I received a high school diploma in 2016. In the following two years, I
+        went to community college and received an associate&apos;s degree in
         computer networking. I would like to continue school, but can neither
         afford nor justify the cost. If the opportunity presented itself, I
         would study philosophy or history. These disciplines would improve my
