@@ -17,12 +17,12 @@ type LayoutProps = {
 const Layout = ({ children }: LayoutProps) => {
   const [showSidebar, setShowSidebar] = useState(false);
   return (
-    <div className="sm:flex">
+    <div className="md:flex">
       <SidebarContext.Provider value={{ setShowSidebar: setShowSidebar }}>
         <Sidebar showSidebar={showSidebar} />
       </SidebarContext.Provider>
       <div
-        className="mx-auto sm:mr-auto sm:ml-0 max-w-4xl w-full"
+        className="mx-auto md:mr-auto md:ml-0 max-w-4xl w-full"
         onClick={() => setShowSidebar(false)}>
         <Header />
         <main className="max-w-prose mx-auto pt-6 px-3">
@@ -33,7 +33,7 @@ const Layout = ({ children }: LayoutProps) => {
       <button
         className={
           "fixed bottom-0 right-0 p-2 m-4 rounded-full bg-gray-900" +
-          " text-gray-300 sm:hidden"
+          " text-gray-300 md:hidden"
         }
         aria-label="toggle sidebar"
         onClick={() => setShowSidebar((prevShowSidebar) => !prevShowSidebar)}>
