@@ -93,12 +93,12 @@ const Sidebar = ({ showSidebar }: SidebarProps) => {
   return (
     <aside
       className={
-        "lg:ml-auto lg:sticky lg:block fixed inset-0" +
+        "sm:ml-auto sm:sticky sm:block fixed inset-0" +
         " z-20 bg-white dark:bg-gray-800 w-5/6 max-w-xs" +
-        " overflow-y-auto h-screen" +
+        " overflow-y-auto h-screen flex-none lg:w-80 sm:w-56" +
         (showSidebar ? "" : " hidden")
       }>
-      <div className="lg:h-5/6 lg:overflow-y-scroll lg:mt-12">
+      <div className="sm:h-5/6 sm:overflow-y-scroll sm:mt-12">
         <History />
       </div>
     </aside>
