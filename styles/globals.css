@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+button span.text-gray-500 {
+  visibility: hidden;
+}
+
+button:hover span.text-gray-500 {
+  visibility: visible;
+}
+
 ::-webkit-scrollbar {
   width: 10px;
 }

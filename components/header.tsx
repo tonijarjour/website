@@ -4,16 +4,24 @@ import Sun from "./icons/sun";
 import Moon from "./icons/moon";
 
 const Header = () => {
-  const [darkMode, setDarkMode] = useState(true);
   const [modeIcon, setModeIcon] = useState(<Sun />);
+  const [darkMode, setDarkMode] = useState(() => {
+    try {
+      const userMode = window.localStorage.getItem("darkMode");
+      return userMode ? JSON.parse(userMode) : true;
+    } catch (e) {
+      return true;
+    }
+  });
 
   useEffect(() => {
+    localStorage.setItem("darkMode", darkMode);
     document.querySelector("html")!.classList.toggle("dark", darkMode);
     setModeIcon(darkMode ? <Sun /> : <Moon />);
   }, [darkMode]);
 
   return (
-    <header className="sticky top-0 bg-white dark:bg-gray-800">
+    <header className="z-10 sticky top-0 bg-white dark:bg-gray-800">
       <nav
         className={
           "flex justify-between font-bold mx-auto max-w-prose p-2" +
@@ -23,13 +31,12 @@ const Header = () => {
           <a className="text-2xl">Toni Jarjour</a>
         </Link>
         <span className="space-x-3">
-          <Link href="/about">
-            <a>About</a>
-          </Link>
           <button
             className="text-indigo-500 dark:text-yellow-300 align-text-bottom"
             aria-label="dark light mode switch"
-            onClick={() => setDarkMode((prevDarkMode) => !prevDarkMode)}>
+            onClick={() =>
+              setDarkMode((prevDarkMode: boolean) => !prevDarkMode)
+            }>
             {modeIcon}
           </button>
         </span>

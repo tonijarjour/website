@@ -14,6 +14,7 @@ const About = () => {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <h1 className="font-bold">About Me</h1>
       <p>
         Hello, my name is Toni. I like to create software that is simple and
         fast. My favorite language is Rust.

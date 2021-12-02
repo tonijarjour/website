@@ -17,10 +17,7 @@ type LayoutProps = {
 const Layout = ({ children }: LayoutProps) => {
   const [showSidebar, setShowSidebar] = useState(false);
   return (
-    <div
-      className={
-        "text-xl lg:flex text-gray-700 dark:bg-gray-800 dark:text-gray-300"
-      }>
+    <div className="lg:flex">
       <SidebarContext.Provider value={{ setShowSidebar: setShowSidebar }}>
         <Sidebar showSidebar={showSidebar} />
       </SidebarContext.Provider>

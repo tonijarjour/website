@@ -6,55 +6,9 @@ const History = () => {
   return (
     <nav className="px-3">
       <ul>
-        <Year year="2022">
-          <Month month="December">
-            <Item path="/about" title="Article #3" />
-            <Item path="/about" title="Article #2" />
-            <Item path="/about" title="Article #1" />
-          </Month>
-          <Month month="November">
-            <Item path="/about" title="Article #3" />
-            <Item path="/about" title="Article #2" />
-            <Item path="/about" title="Article #1" />
-          </Month>
-          <Month month="September">
-            <Item path="/about" title="Article #3" />
-            <Item path="/about" title="Article #2" />
-            <Item path="/about" title="Article #1" />
-          </Month>
-        </Year>
         <Year year="2021">
           <Month month="December">
-            <Item path="/about" title="Article #3" />
-            <Item path="/about" title="Article #2" />
-            <Item path="/about" title="Article #1" />
-          </Month>
-          <Month month="November">
-            <Item path="/about" title="Article #3" />
-            <Item path="/about" title="Article #2" />
-            <Item path="/about" title="Article #1" />
-          </Month>
-          <Month month="September">
-            <Item path="/about" title="Article #3" />
-            <Item path="/about" title="Article #2" />
-            <Item path="/about" title="Article #1" />
-          </Month>
-        </Year>
-        <Year year="2021">
-          <Month month="December">
-            <Item path="/about" title="Article #3" />
-            <Item path="/about" title="Article #2" />
-            <Item path="/about" title="Article #1" />
-          </Month>
-          <Month month="November">
-            <Item path="/about" title="Article #3" />
-            <Item path="/about" title="Article #2" />
-            <Item path="/about" title="Article #1" />
-          </Month>
-          <Month month="September">
-            <Item path="/about" title="Article #3" />
-            <Item path="/about" title="Article #2" />
-            <Item path="/about" title="Article #1" />
+            <Item path="/about" title="About Me" />
           </Month>
         </Year>
       </ul>
@@ -73,8 +27,9 @@ const Year = ({ children, year }: YearProps) => {
     <li className="my-4">
       <button
         onClick={() => setExpand((prevExpand) => !prevExpand)}
-        className="font-bold">
+        className="font-bold w-full text-left">
         {year}
+        <span className="font-normal text-gray-500"> »</span>
       </button>
       <ul className="ml-1">{expand && children}</ul>
     </li>
@@ -92,8 +47,9 @@ const Month = ({ children, month }: MonthProps) => {
     <li className="my-2">
       <button
         onClick={() => setExpand((prevExpand) => !prevExpand)}
-        className="italic">
+        className="italic w-full text-left">
         {month}
+        <span className="not-italic text-gray-500"> »</span>
       </button>
       <ul className="ml-2">{expand && children}</ul>
     </li>
@@ -113,12 +69,16 @@ const Item = ({
 }: ItemProps) => {
   const { setShowSidebar } = useContext(SidebarContext);
   return (
-    <li className="my-1.5">
+    <li
+      className={
+        "my-1.5 dark:hover:bg-opacity-40 hover:bg-opacity-40" +
+        " hover:bg-indigo-100 dark:hover:bg-gray-700 px-1 py-0.5"
+      }>
       <Link href={path}>
-        <a
-          className={"border-l-4 px-1.5" + color}
-          onClick={() => setShowSidebar(false)}>
-          {title}
+        <a>
+          <div onClick={() => setShowSidebar(false)}>
+            <span className={"border-l-4 px-1.5" + color}>{title}</span>
+          </div>
         </a>
       </Link>
     </li>
@@ -134,7 +94,7 @@ const Sidebar = ({ showSidebar }: SidebarProps) => {
     <aside
       className={
         "lg:ml-auto lg:sticky lg:block fixed inset-0" +
-        " z-10 bg-white dark:bg-gray-800 w-5/6 max-w-xs" +
+        " z-20 bg-white dark:bg-gray-800 w-5/6 max-w-xs" +
         " overflow-y-auto h-screen" +
         (showSidebar ? "" : " hidden")
       }>
