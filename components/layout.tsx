@@ -25,10 +25,10 @@ const Layout = ({ children }: LayoutProps) => {
         className="mx-auto lg:mr-auto lg:ml-0 max-w-4xl w-full"
         onClick={() => setShowSidebar(false)}>
         <Header />
-        <main className="max-w-prose mx-auto min-h-screen pt-6 px-3">
+        <main className="max-w-prose mx-auto pt-6 px-3">
           {children}
-        </main>
         <Footer />
+        </main>
       </div>
       <button
         className={
