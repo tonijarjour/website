@@ -59,7 +59,7 @@ const Article = () => {
       <p className="mb-4">
         Inside the <code className="code-in-text">styles</code>directory there
         is a <code className="code-in-text">Home.module.css</code> file that is
-        used to style the index page. Since we are using tailwindcss, you won't
+        used to style the index page. Since we are using tailwindcss, you won&apos;t
         need it. As for the <code className="code-in-text">pages</code>{" "}
         directory, we can delete <code className="code-in-text">api</code>
         to simplify the structure while getting started. You can add an api to
@@ -137,7 +137,7 @@ const Article = () => {
       <p className="mb-4">
         The final step in this initial setup is to create a layout. This is a
         feature that makes every page on the website have a header, sidebar, and
-        footer automatically. You'll only need to implement each of these
+        footer automatically. You&apos;ll only need to implement each of these
         elements once. Create a<code className="code-in-text">components</code>{" "}
         directory and a <code className="code-in-text">layout.tsx</code> file
         inside.
@@ -173,7 +173,7 @@ const Article = () => {
         Finally, lets place the page content within the layout. Edit{" "}
         <code className="code-in-text">pages/_app.tsx</code> and place the{" "}
         <code className="code-in-text">Component</code> element inside{" "}
-        <code className="code-in-text">Layout</code>. Don't forget the import
+        <code className="code-in-text">Layout</code>. Don&apos;t forget the import
         statement.
       </p>
       <pre className="my-2 p-5 w-full overflow-x-scroll">
@@ -196,7 +196,7 @@ const Article = () => {
         text. Try going to{" "}
         <code className="code-in-text">localhost::3000/not-a-page</code>. You
         will still see the header and footer, even though the page was not
-        found. Let's move on to tailwindcss.
+        found. Let&apos;s move on to tailwindcss.
       </p>
       <h2 className="font-bold">TailwindCSS Setup</h2>
       <p className="mb-4">
@@ -243,7 +243,7 @@ const Article = () => {
         {'<html lang="en-US" className="dark">'}
       </pre>
       <p>
-      That's it. I wish you good luck on your web development journey.
+      That&apos;s it. I wish you good luck on your web development journey.
       </p>
     </article>
   );
