@@ -2,8 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
+.dark code.code-in-text {
+  --tw-bg-opacity: 1;
+  background-color: rgba(17, 24, 39, var(--tw-bg-opacity));
+}
+
+code.code-in-text {
+  --tw-bg-opacity: 1;
+  background-color: rgba(243, 244, 246, var(--tw-bg-opacity));
+  padding-top: 0.125rem;
+  padding-bottom: 0.125rem;
+  padding-left: 0.375rem;
+  padding-right: 0.375rem;
+}
+
+header.z-10.sticky.top-0.bg-white {
+  min-height: 5vh;
+}
+
 main.max-w-prose.mx-auto.pt-6.px-3 {
-  min-height: 95vh;
+  min-height: 95.1vh;
 }
 
 button span.text-gray-500 {
