@@ -95,7 +95,7 @@ const Sidebar = ({ showSidebar }: SidebarProps) => {
     <aside
       className={
         "lg:ml-auto lg:sticky lg:block fixed inset-0" +
-        " z-20 bg-white dark:bg-gray-600 w-5/6 max-w-xs" +
+        " z-20 bg-white dark:bg-gray-800 w-5/6 max-w-xs" +
         " overflow-y-auto h-screen" +
         (showSidebar ? "" : " hidden")
       }>
