@@ -8,6 +8,7 @@ const History = () => {
       <ul>
         <Year year="2021">
           <Month month="December">
+            <Item path="/publications/DEC21/nextjs-tailwind-guide" title="How to start a website with Next.js and TailwindCSS" />
             <Item path="/about" title="About Me" />
           </Month>
         </Year>
@@ -93,12 +94,12 @@ const Sidebar = ({ showSidebar }: SidebarProps) => {
   return (
     <aside
       className={
-        "md:ml-auto md:sticky md:block fixed inset-0" +
-        " z-20 bg-white dark:bg-gray-800 w-5/6 max-w-xs" +
-        " overflow-y-auto h-screen flex-none lg:w-80 md:w-56" +
+        "lg:ml-auto lg:sticky lg:block fixed inset-0" +
+        " z-20 bg-white dark:bg-gray-600 w-5/6 max-w-xs" +
+        " overflow-y-auto h-screen" +
         (showSidebar ? "" : " hidden")
       }>
-      <div className="md:h-5/6 md:overflow-y-scroll md:mt-12">
+      <div className="lg:h-5/6 lg:overflow-y-scroll lg:mt-12">
         <History />
       </div>
     </aside>

@@ -2,12 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-.dark code.code-in-text {
+.dark code.code-in-text, .dark pre {
   --tw-bg-opacity: 1;
   background-color: rgba(17, 24, 39, var(--tw-bg-opacity));
 }
 
-code.code-in-text {
+code.code-in-text, pre {
   --tw-bg-opacity: 1;
   background-color: rgba(243, 244, 246, var(--tw-bg-opacity));
   padding-top: 0.125rem;
@@ -36,8 +36,8 @@ button:hover span.text-gray-500 {
   width: 10px;
 }
 
-code::-webkit-scrollbar {
-  height: 3px;
+code::-webkit-scrollbar, pre::-webkit-scrollbar {
+  height: 6px;
 }
 
 ::-webkit-scrollbar-thumb {
