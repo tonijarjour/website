@@ -1,6 +1,5 @@
-import { useState, useContext } from "react";
+import { useState } from "react";
 import Link from "next/link";
-import { SidebarContext } from "./layout";
 
 const History = () => {
   return (
@@ -8,7 +7,6 @@ const History = () => {
       <ul>
         <Year year="2021">
           <Month month="December">
-            <Item path="/publications/DEC21/nextjs-tailwind-guide" title="How to start a website with Next.js and TailwindCSS" />
             <Item path="/about" title="About Me" />
           </Month>
         </Year>
@@ -68,7 +66,6 @@ const Item = ({
   title,
   color = " border-blue-400 dark:border-indigo-500",
 }: ItemProps) => {
-  const { setShowSidebar } = useContext(SidebarContext);
   return (
     <li
       className={
@@ -77,7 +74,7 @@ const Item = ({
       }>
       <Link href={path}>
         <a>
-          <div onClick={() => setShowSidebar(false)}>
+          <div>
             <span className={"border-l-4 px-1.5" + color}>{title}</span>
           </div>
         </a>
@@ -86,24 +83,4 @@ const Item = ({
   );
 };
 
-type SidebarProps = {
-  showSidebar: boolean;
-};
-
-const Sidebar = ({ showSidebar }: SidebarProps) => {
-  return (
-    <aside
-      className={
-        "lg:ml-auto lg:sticky lg:block fixed inset-0" +
-        " z-20 bg-white dark:bg-gray-800 w-5/6 max-w-xs" +
-        " overflow-y-auto h-screen" +
-        (showSidebar ? "" : " hidden")
-      }>
-      <div className="lg:h-5/6 lg:overflow-y-scroll lg:mt-12">
-        <History />
-      </div>
-    </aside>
-  );
-};
-
-export default Sidebar;
+export default History;
