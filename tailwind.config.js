@@ -1,6 +1,9 @@
 module.exports = {
-  purge: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
-  darkMode: "class", // or 'media' or 'class'
+  content: [
+    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}",
+  ],
+  darkMode: "class",
   theme: {
     extend: {
       minHeight: {
@@ -8,9 +11,6 @@ module.exports = {
         "5vh": "5vh",
       },
     },
-  },
-  variants: {
-    extend: {},
   },
   plugins: [],
 };
