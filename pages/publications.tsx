@@ -1,9 +1,20 @@
 import { useState } from "react";
 import Link from "next/link";
+import Head from "next/head";
 
 const History = () => {
   return (
     <nav className="px-3">
+      <Head>
+        <title>Publications - Toni Jarjour</title>
+        <meta
+          name="description"
+          content={
+            "All publications listed with the most recent at the top."
+          }
+        />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <ul>
         <Year year="2021">
           <Month month="December">

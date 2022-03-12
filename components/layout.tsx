@@ -9,7 +9,7 @@ const Layout = ({ children }: LayoutProps) => {
   return (
     <div className="max-w-prose mx-auto">
       <Header />
-      <main className="min-h-95.1vh pt-6 px-3">
+      <main className="min-h-95vh pt-6 px-3">
         {children}
         <Footer />
       </main>

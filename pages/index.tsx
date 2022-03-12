@@ -5,7 +5,7 @@ const Home = () => {
   return (
     <article>
       <Head>
-        <title>Recent Publications - Toni Jarjour</title>
+        <title>Toni Jarjour</title>
         <meta
           name="description"
           content={
